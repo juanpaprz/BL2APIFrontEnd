@@ -4,8 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { WeaponCodesComponent } from './Components/weapon-codes/weapon-codes.component';
 
-const appRoutes: Routes = [];
+const appRoutes: Routes = [
+  { path: '/weapons/codes', component: WeaponCodesComponent, outlet: 'main' },
+];
 
 @NgModule({
   imports: [
@@ -16,7 +19,7 @@ const appRoutes: Routes = [];
     ReactiveFormsModule,
   ],
   providers: [],
-  declarations: [AppComponent],
+  declarations: [AppComponent, WeaponCodesComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
