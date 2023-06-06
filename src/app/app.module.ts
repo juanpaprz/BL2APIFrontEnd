@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { WeaponCodesComponent } from './Components/weapon-codes/weapon-codes.component';
 
 const appRoutes: Routes = [
-  { path: '/weapons/codes', component: WeaponCodesComponent, outlet: 'main' },
+  { path: '/weapons/codes', component: WeaponCodesComponent },
 ];
 
 @NgModule({
