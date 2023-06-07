@@ -9,7 +9,7 @@
   data-bs-theme="dark"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Borderlands 2 API</a>
+    <a class="navbar-brand" href="">Borderlands 2 API</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -32,7 +32,9 @@
             Weapons
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/weapons/codes">Codes</a></li>
+            <li>
+              <a class="dropdown-item" href="/weapons/codes/types">Codes</a>
+            </li>
           </ul>
         </li>
       </div>
@@ -41,5 +43,5 @@
 </nav>
 
 <div class="container text-bg-dark">
-  <router-outlet name="main"></router-outlet>
+  <router-outlet></router-outlet>
 </div>

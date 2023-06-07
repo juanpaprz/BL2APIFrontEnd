@@ -1,1 +1,5 @@
 /* Add application styles & imports to this file! */
+.btn-primary {
+  background-color: #003d99;
+  border-color: #003d99;
+}
