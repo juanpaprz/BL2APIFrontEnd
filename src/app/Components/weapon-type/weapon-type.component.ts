@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CommonFormService } from '../../Services/Forms/common-form.service';
 import { ValidationService } from '../../Services/validation.service';
 
 @Component({
@@ -8,26 +9,21 @@ import { ValidationService } from '../../Services/validation.service';
   styleUrls: ['./weapon-type.component.css'],
 })
 export class WeaponTypeComponent implements OnInit {
-  constructor(private validationService: ValidationService) {}
+  constructor(private formService: CommonFormService) {}
 
   form: FormGroup = new FormGroup({});
 
+  typesArray: FormGroup[] = [];
+
+  get types() {
+    return this.form.get('types') as FormArray;
+  }
+
   ngOnInit() {
+    this.typesArray.push(this.formService.form);
+
     this.form = new FormGroup({
-      code: new FormControl('', [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(4),
-      ]),
-      name: new FormControl('', Validators.required),
+      types: new FormArray(this.typesArray),
     });
-  }
-
-  isFieldValid(field: string): boolean {
-    return this.validationService.isFieldValid(this.form, field);
-  }
-
-  setInvalidClass(field: string) {
-    return this.validationService.setInvalidClass(this.form, field);
   }
 }
