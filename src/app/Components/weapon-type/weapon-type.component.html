@@ -2,13 +2,9 @@
 <hr />
 
 <div class="row">
-  <form class="col-lg-6" [formGroup]="form">
-    <div formArrayName="types">
-      <div *ngFor="let type of typesArray">
-        <app-common-form></app-common-form>
-      </div>
-    </div>
-    <div class="mb-2">
+  <form class="col-lg-6" (ngSubmit)="addType()">
+    <app-common-form></app-common-form>
+    <div class="mb-3">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </form>

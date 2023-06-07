@@ -9,6 +9,7 @@ import { InvalidFieldComponent } from './Components/Common/invalid-field/invalid
 import { WeaponCodesComponent } from './Components/weapon-codes/weapon-codes.component';
 import { WeaponTypeComponent } from './Components/weapon-type/weapon-type.component';
 import { CommonFormService } from './Services/Forms/common-form.service';
+import { WeaponTypeFormService } from './Services/Forms/weapon-type-form.service';
 import { ValidationService } from './Services/validation.service';
 
 const appRoutes: Routes = [
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ValidationService, CommonFormService],
+  providers: [ValidationService, CommonFormService, WeaponTypeFormService],
   declarations: [
     AppComponent,
     WeaponCodesComponent,

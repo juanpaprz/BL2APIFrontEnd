@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonFormService } from '../../../Services/Forms/common-form.service';
 import { ValidationService } from '../../../Services/validation.service';
+import { WeaponTypeFormService } from '../../../Services/Forms/weapon-type-form.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-common-form',
@@ -9,13 +10,13 @@ import { ValidationService } from '../../../Services/validation.service';
 })
 export class CommonFormComponent implements OnInit {
   constructor(
-    private formService: CommonFormService,
+    private formService: WeaponTypeFormService,
     private validationService: ValidationService
   ) {}
 
-  form = this.formService.form;
-
   ngOnInit() {}
+
+  form: FormGroup = this.formService.form;
 
   isFieldValid(field: string): boolean {
     return this.validationService.isFieldValid(this.form, field);

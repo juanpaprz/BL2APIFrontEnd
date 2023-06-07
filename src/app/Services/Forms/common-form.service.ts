@@ -5,11 +5,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CommonFormService {
   constructor() {}
 
-  readonly form = new FormGroup({
+  readonly form: FormGroup = new FormGroup({
     code: new FormControl('', [
       Validators.required,
-      Validators.minLength(4),
       Validators.maxLength(4),
+      Validators.minLength(4),
     ]),
     name: new FormControl('', Validators.required),
   });

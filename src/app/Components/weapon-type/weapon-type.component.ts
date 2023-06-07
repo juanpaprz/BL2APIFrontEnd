@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CommonFormService } from '../../Services/Forms/common-form.service';
-import { ValidationService } from '../../Services/validation.service';
+import { FormGroup } from '@angular/forms';
+import { WeaponTypeFormService } from '../../Services/Forms/weapon-type-form.service';
 
 @Component({
   selector: 'app-weapon-type',
@@ -9,21 +8,13 @@ import { ValidationService } from '../../Services/validation.service';
   styleUrls: ['./weapon-type.component.css'],
 })
 export class WeaponTypeComponent implements OnInit {
-  constructor(private formService: CommonFormService) {}
+  constructor(private formService: WeaponTypeFormService) {}
 
-  form: FormGroup = new FormGroup({});
+  form: FormGroup = this.formService.form;
 
-  typesArray: FormGroup[] = [];
+  ngOnInit() {}
 
-  get types() {
-    return this.form.get('types') as FormArray;
-  }
-
-  ngOnInit() {
-    this.typesArray.push(this.formService.form);
-
-    this.form = new FormGroup({
-      types: new FormArray(this.typesArray),
-    });
+  addType() {
+    console.log(this.form);
   }
 }
