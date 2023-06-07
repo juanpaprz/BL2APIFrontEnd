@@ -1,4 +1,4 @@
-export class CreateCommon {
+export class CommonDTO {
   code: string = '';
   name: string = '';
 }
